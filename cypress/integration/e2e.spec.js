@@ -25,7 +25,7 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
 
     });
 
-    it.only('Deve adicionar 4 itens ao carrinho', () => {
+    it('Deve adicionar 4 itens ao carrinho', () => {
         var quantidade = 4
         cy.get('[class="product-block grid"]')
         .contains('Abominable Hoodie').click()
@@ -37,13 +37,12 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         cy.get('.dropdown-toggle > .mini-cart-items').should('contain',quantidade)
         cy.get('.woocommerce-message').should('contain', quantidade +' × “Abominable Hoodie” foram adicionados no seu carrinho.')
 
-        cy.get('.woocommerce-message > .button').click()
-        cy.get('.checkout-button').click()
-        
-
-
 });
-        
+        it('Deve adicionar produtos ao carrinho usando comandos costumizado.', () => {
+           cy.addProdutos('Abominable Hoodie','xs','Blue', 4)
+            
+
+        });
 
     });
 

@@ -24,10 +24,38 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+const cypress = require("cypress");
+
+
+
+//const cypress = require("cypress");
+
 
 Cypress.Commands.add('login', (usuario, senha) => {
     cy.get('#username').type(usuario)
     cy.get('#password').type(senha, {log: false})
     cy.get('.woocommerce-form > .button').click()
 });
+
+cypress.Commands.add('preCadastro',(email, senha, nome, sobrenome) =>{
+cy.get('#reg_email.').type(email)
+cy.get('#password').type(senha)
+cy.get(':nth-child(4) > . button').click
+
+cy.get('woocommerce-MyAccount-navigation-link--edit-account > a').click
+cy.get('account_fist_name').type(nome)
+cy.get('account_last_name').type(sobrenome)
+cy.get('.woocommerce-button').click()
+
+})
+
+cypress.Commands.add('addProdutos', (produto, quantidade) =>{
+    cy.get('[class="product-block grid"]')
+    .contains(produto).click()
+    cy.get('.button-variable-item-XS').click()
+    cy.get('.button-variable-item-Blue').click()
+    cy.get('.input-text').clear().type(quantidade)
+    cy.get('.single_add_to_cart_button').click()
+
+})
 
