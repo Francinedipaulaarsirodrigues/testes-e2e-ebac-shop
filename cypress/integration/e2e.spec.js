@@ -43,7 +43,18 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
             
 
         });
+        it(' Demais etapas', () => {
+          //ver carrinho
+            cy.get('.woocommerce-message > .button').click()
+            cy.get('.checkout-button').click()
 
+            //finalizar etapa de compras
+            cy.get('#terms').click()
+            cy.get('#place_order').click()
+
+            // finalizar pedido e verificação final
+            cy.get('.woocommerce-notice').contains('Obrigado. Seu pedido foi recebido.').should('be.visible')
+        });
     });
 
 
