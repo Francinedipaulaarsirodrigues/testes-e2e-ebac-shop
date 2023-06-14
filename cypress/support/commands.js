@@ -57,5 +57,10 @@ cypress.Commands.add('addProdutos', (produto, tamanho,cor, quantidade) =>{
     cy.get('.input-text').clear().type(quantidade)
     cy.get('.single_add_to_cart_button').click()
 
+    cy.get('.woocommerce-message').contains('foi adicionado no seu carrinho').should('be.visible')
+
 })
+
+
+
 
