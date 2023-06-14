@@ -40,9 +40,9 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
 });
         it('Deve adicionar produtos ao carrinho usando comandos costumizado.', () => {
            cy.addProdutos('Abominable Hoodie','xs','Blue', '1')
-           cy.addProdutos('Tank', 'Gym', 'M', '1')
-           cy.addProdutos('Shoes', 'Granite', 'M','1')
-           cy.addProdutos('Street','orange','M','1')
+           cy.addProdutos('Strike Endurance Tee', 'xs', 'blue', '1')
+           cy.addProdutos('Stellar Solar Jacket', 'M','red','1')
+           cy.addProdutos('Tristan Endurance Tank','xl','white','1')
         });
 
         it(' Demais etapas', () => {
