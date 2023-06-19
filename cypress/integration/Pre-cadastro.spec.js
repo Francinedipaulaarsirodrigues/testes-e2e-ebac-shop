@@ -4,7 +4,7 @@ var faker = required('faker');
 describe('Funcionalidade Pré Cadastro', () => {
 
     beforeEach(() => {
-        cy.visit('http:lojaebac.ebaconline.art/minha-conta/')
+        cy.visit('minha-conta')
     });
 
     it('Deve completar o Pré Cadastro com sucesso', () => {

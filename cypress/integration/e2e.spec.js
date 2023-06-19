@@ -23,9 +23,7 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         .contains('Abominable Hoodie')
         .click()
 
-    });
-
-    it('Deve adicionar 4 itens ao carrinho', () => {
+        //Deve adicionar 4 itens ao carrinho.
         var quantidade = 1
         cy.get('[class="product-block grid"]')
         .contains('Abominable Hoodie').click()
@@ -37,15 +35,13 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         cy.get('.dropdown-toggle > .mini-cart-items').should('contain',quantidade)
         cy.get('.woocommerce-message').should('contain', quantidade +' × “Abominable Hoodie” foram adicionados no seu carrinho.')
 
-});
-        it('Deve adicionar produtos ao carrinho usando comandos costumizado.', () => {
+
+        //Deve adicionar produtos ao carrinho usando comandos costumizado.
            cy.addProdutos('Abominable Hoodie','xs','Blue', '1')
            cy.addProdutos('Strike Endurance Tee', 'xs', 'blue', '1')
            cy.addProdutos('Stellar Solar Jacket', 'M','red','1')
            cy.addProdutos('Tristan Endurance Tank','xl','white','1')
-        });
-
-        it(' Demais etapas', () => {
+        
           //ver carrinho
             cy.get('.woocommerce-message > .button').click()
             cy.get('.checkout-button').click()
@@ -56,7 +52,9 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
 
             // finalizar pedido e verificação final
             cy.get('.woocommerce-notice').contains('Obrigado. Seu pedido foi recebido.').should('be.visible')
-        });
+
+    });
+        
     });
 
 

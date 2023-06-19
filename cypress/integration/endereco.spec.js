@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 import EndereçoPage from "../support/page_objects/Endereço.page";
-cont dadosEndereco = require( '../fixtures/endereco.json')
+const dadosEndereco = require( '../fixtures/endereco.json')
 
 describe('Funcionalidade endereco -Faturamento e entrega.', () => {
 
