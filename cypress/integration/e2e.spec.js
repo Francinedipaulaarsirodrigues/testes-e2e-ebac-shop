@@ -42,7 +42,10 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
            cy.addProdutos('Stellar Solar Jacket', 'M','red','1')
            cy.addProdutos('Tristan Endurance Tank','xl','white','1')
         
+           //Demais etapas
+           
           //ver carrinho
+          
             cy.get('.woocommerce-message > .button').click()
             cy.get('.checkout-button').click()
 
